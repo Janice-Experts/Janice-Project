@@ -22,7 +22,13 @@
       "Bash(winget install:*)",
       "Bash(cmd.exe:*)",
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth:*)",
-      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo:*)"
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo:*)",
+      "Bash(mkdir:*)",
+      "Bash(pip install:*)",
+      "Bash(py:*)",
+      "Bash(python3:*)",
+      "Bash(winget:*)",
+      "Bash(export:*)"
     ]
   },
   "hooks": {
