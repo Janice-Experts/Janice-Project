@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaimGuard - Upload Claims</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-brand">ClaimGuard</span>
+        <div class="nav-links">
+            <a href="/" class="active">Upload</a>
+            <a href="/dashboard.html">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="upload-card">
+            <h1>Validate Your Claims</h1>
+            <p class="subtitle">Upload a CSV to detect ICD/CPT coding errors, missing modifiers, and duplicate claims.</p>
+
+            <form id="upload-form">
+                <label id="drop-zone" for="file-input">
+                    <div class="drop-icon">&#128194;</div>
+                    <div class="drop-text">Drop CSV here or click to browse</div>
+                    <input type="file" id="file-input" accept=".csv" style="display:none">
+                </label>
+                <button type="submit" class="btn btn-primary btn-large">Validate Claims</button>
+            </form>
+
+            <div id="status" class="status" style="display:none"></div>
+
+            <div class="csv-hint">
+                <strong>Required columns:</strong> ClaimID, Age, Gender, ICD_Code, CPT_Code, Modifier, Date_of_Service<br>
+                <strong>Optional:</strong> PatientID (needed for duplicate detection)
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/upload.js"></script>
+</body>
+</html>

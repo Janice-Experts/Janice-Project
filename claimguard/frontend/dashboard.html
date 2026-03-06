@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaimGuard - Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-brand">ClaimGuard</span>
+        <div class="nav-links">
+            <a href="/">Upload</a>
+            <a href="/dashboard.html" class="active">Dashboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="dashboard-title">Analytics Dashboard</h1>
+
+        <div id="summary-cards" class="summary-cards"></div>
+
+        <div class="chart-section">
+            <h2>Error Breakdown</h2>
+            <canvas id="errors-chart" height="80"></canvas>
+        </div>
+
+        <div class="sessions-section">
+            <h2>Recent Sessions</h2>
+            <div id="sessions-table">
+                <p style="color:#718096">Loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

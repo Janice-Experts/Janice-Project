@@ -1,0 +1,199 @@
+code,description
+0001,History and physical examination
+0002,Follow-up consultation
+0010,Consultation - new patient
+0011,Consultation - established patient
+0100,Basic medical examination
+0101,Comprehensive medical examination
+0190,Specialist consultation
+0191,Second opinion consultation
+0192,Telemedicine consultation
+0193,Domiciliary visit
+0194,After-hours consultation
+0195,Emergency consultation
+0196,Urgent consultation
+0197,Night visit
+0198,Weekend consultation
+0199,Public holiday consultation
+0200,Specialist consultation with procedures
+0201,Hospital visit
+0202,ICU visit
+0203,Neonatal ICU visit
+0204,High care visit
+0210,Ward round visit
+0211,Pre-operative assessment
+0212,Post-operative review
+0213,Anaesthetic review
+0214,Pain management consultation
+0215,Palliative care consultation
+0220,Psychiatry consultation
+0221,Psychiatric review
+0222,Psychotherapy session
+0223,Group therapy session
+0224,Family therapy session
+0225,Cognitive behavioural therapy
+0230,Physiotherapy assessment
+0231,Physiotherapy treatment session
+0232,Occupational therapy assessment
+0233,Occupational therapy session
+0234,Speech therapy assessment
+0235,Speech therapy session
+0240,Dietitian consultation
+0241,Diabetic education session
+0242,Smoking cessation counselling
+0243,Alcohol rehabilitation consultation
+0244,Substance abuse consultation
+0250,Radiography - chest
+0251,Radiography - abdomen
+0252,Radiography - spine
+0253,Radiography - pelvis
+0254,Radiography - limb
+0260,Ultrasound - abdomen
+0261,Ultrasound - pelvis
+0262,Ultrasound - obstetric
+0263,Ultrasound - thyroid
+0264,Ultrasound - soft tissue
+0265,Echocardiogram
+0270,CT scan - head
+0271,CT scan - chest
+0272,CT scan - abdomen
+0273,CT scan - pelvis
+0274,CT scan - spine
+0280,MRI - brain
+0281,MRI - spine
+0282,MRI - joint
+0283,MRI - abdomen
+0284,MRI - pelvis
+0290,ECG - resting 12 lead
+0291,ECG - exercise stress test
+0292,Holter monitor 24 hour
+0293,Echocardiography - stress
+0300,Full blood count
+0301,Urea electrolytes creatinine
+0302,Liver function tests
+0303,Thyroid function tests
+0304,Lipogram
+0305,HbA1c
+0306,Blood glucose fasting
+0307,Blood glucose random
+0308,PSA screening
+0309,CRP
+0310,ESR
+0311,Blood culture
+0312,Urine microscopy culture sensitivity
+0313,Stool culture
+0314,Sputum culture
+0315,INR/PT
+0316,APTT
+0317,D-dimer
+0318,Troponin
+0319,BNP
+0320,HIV ELISA
+0321,CD4 count
+0322,Viral load
+0323,Hepatitis B surface antigen
+0324,Hepatitis C antibody
+0325,RPR syphilis screen
+0326,TPHA syphilis confirmatory
+0327,Pregnancy test urine
+0328,Pregnancy test serum
+0329,Pap smear
+0330,Endoscopy - gastroscopy
+0331,Endoscopy - colonoscopy
+0332,Endoscopy - sigmoidoscopy
+0333,Endoscopy - bronchoscopy
+0334,Endoscopy - cystoscopy
+0340,Minor surgery - excision skin lesion
+0341,Minor surgery - incision drainage abscess
+0342,Minor surgery - wound suturing
+0343,Minor surgery - circumcision
+0344,Minor surgery - vasectomy
+0345,Minor surgery - colposcopy biopsy
+0350,Major surgery - appendicectomy
+0351,Major surgery - cholecystectomy
+0352,Major surgery - hernia repair
+0353,Major surgery - hysterectomy
+0354,Major surgery - caesarean section
+0355,Major surgery - hip replacement
+0356,Major surgery - knee replacement
+0357,Major surgery - coronary artery bypass
+0358,Major surgery - cardiac valve replacement
+0359,Major surgery - colectomy
+0360,Anaesthesia - general
+0361,Anaesthesia - regional spinal epidural
+0362,Anaesthesia - local with sedation
+0363,Anaesthesia - monitored care
+0370,Vaccination - influenza
+0371,Vaccination - pneumococcal
+0372,Vaccination - hepatitis B
+0373,Vaccination - hepatitis A
+0374,Vaccination - meningococcal
+0375,Vaccination - HPV
+0376,Vaccination - BCG
+0377,Vaccination - measles mumps rubella
+0378,Vaccination - tetanus
+0379,Vaccination - rotavirus
+0380,Dressing change simple
+0381,Dressing change complex
+0382,Wound debridement
+0383,Burn treatment
+0384,Cast application
+0385,Splint application
+0386,Bandaging
+0390,Spirometry
+0391,Peak flow measurement
+0392,Oxygen therapy
+0393,Nebulisation
+0394,Chest physiotherapy
+0400,Dialysis - haemodialysis
+0401,Dialysis - peritoneal
+0402,Dialysis - CAPD
+0410,Chemotherapy administration
+0411,Radiotherapy planning
+0412,Radiotherapy treatment
+0420,Blood transfusion
+0421,Platelet transfusion
+0422,Fresh frozen plasma
+0423,IV therapy administration
+0424,Total parenteral nutrition
+0430,Delivery - normal vaginal
+0431,Delivery - assisted vaginal forceps
+0432,Delivery - assisted vaginal vacuum
+0433,Delivery - caesarean emergency
+0434,Delivery - caesarean elective
+0440,Neonatal resuscitation
+0441,Neonatal examination
+0442,Neonatal phototherapy
+0450,Ophthalmology - slit lamp examination
+0451,Ophthalmology - fundoscopy
+0452,Ophthalmology - refraction
+0453,Ophthalmology - tonometry
+0454,Ophthalmology - cataract surgery
+0455,Ophthalmology - laser refractive surgery
+0460,ENT - audiometry
+0461,ENT - tympanometry
+0462,ENT - myringotomy
+0463,ENT - adenoidectomy
+0464,ENT - tonsillectomy
+0465,ENT - nasal polypectomy
+0470,Dermatology - skin biopsy
+0471,Dermatology - cryotherapy
+0472,Dermatology - phototherapy
+0473,Dermatology - patch testing
+0480,Urology - catheterisation
+0481,Urology - cystoscopy
+0482,Urology - TURP
+0483,Urology - nephrectomy
+0490,Orthopaedics - joint aspiration
+0491,Orthopaedics - joint injection
+0492,Orthopaedics - fracture reduction closed
+0493,Orthopaedics - fracture reduction open
+0500,Dental - examination
+0501,Dental - extraction
+0502,Dental - filling
+0503,Dental - root canal
+0504,Dental - crown
+0505,Dental - denture
+0510,Podiatry - nail care
+0511,Podiatry - orthotics
+0512,Podiatry - wart treatment
