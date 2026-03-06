@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/james/**)",
+      "Read(//c/Users/james/.config/claude/**)",
+      "Bash(code:*)",
+      "Bash(docker context:*)",
+      "Bash(docker extension:*)",
+      "Bash(docker pull:*)",
+      "Bash(docker:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.docker.com)",
+      "Bash(docker version:*)",
+      "Bash(claude mcp:*)",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(claude plugin:*)",
+      "Bash(test:*)",
+      "WebFetch"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \".claude/hooks/gemini-webfetch-fallback.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
