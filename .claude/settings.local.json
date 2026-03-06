@@ -16,7 +16,13 @@
       "WebFetch(domain:github.com)",
       "Bash(claude plugin:*)",
       "Bash(test:*)",
-      "WebFetch"
+      "WebFetch",
+      "Bash(git:*)",
+      "Bash(gh auth:*)",
+      "Bash(winget install:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo:*)"
     ]
   },
   "hooks": {
