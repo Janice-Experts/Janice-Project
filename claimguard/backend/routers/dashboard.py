@@ -28,7 +28,7 @@ def get_dashboard(db: Session = Depends(get_db)):
     )
     cpt_errors = (
         db.query(ClaimRow)
-        .filter(cast(ClaimRow.issues, Text).like('%"CPT_Code"%'))
+        .filter(cast(ClaimRow.issues, Text).like('%"SA_Procedure_Code"%'))
         .count()
     )
     modifier_errors = (

@@ -3,25 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClaimGuard - Results</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>ClaimGuard – Results</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <span class="nav-brand">ClaimGuard</span>
-        <div class="nav-links">
-            <a href="/">Upload</a>
-            <a href="/dashboard.html">Dashboard</a>
-        </div>
+<div class="layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <a href="/" class="sidebar-btn" title="Upload">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+        <a href="/dashboard.html" class="sidebar-btn" title="Dashboard">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+            </svg>
+        </a>
+        <a href="/results.html" class="sidebar-btn active" title="Results">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+        </a>
+        <a href="#" class="sidebar-btn" title="More">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+        </a>
     </nav>
 
-    <main class="container">
-        <div id="summary"></div>
-        <div id="results-container">
-            <p style="color:#718096">Loading results...</p>
-        </div>
-    </main>
+    <!-- Main -->
+    <div class="main">
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-main">ClaimGuard</span><span class="brand-sub"> | EisWagter</span>
+            </div>
+            <select class="lang-select">
+                <option value="en">EN</option>
+                <option value="af">AF</option>
+            </select>
+        </header>
 
-    <script src="/js/results.js"></script>
+        <div class="page-body">
+            <div id="summary"></div>
+            <div id="results-container">
+                <p style="color:#64748b">Loading results...</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/js/results.js"></script>
 </body>
 </html>

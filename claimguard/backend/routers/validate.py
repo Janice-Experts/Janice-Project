@@ -12,7 +12,7 @@ from ..validators.duplicate_checker import check_duplicate
 router = APIRouter()
 
 REQUIRED_COLUMNS = [
-    "ClaimID", "Age", "Gender", "ICD_Code", "CPT_Code", "Modifier", "Date_of_Service"
+    "ClaimID", "Age", "Gender", "ICD_Code", "SA_Procedure_Code", "Modifier", "Date_of_Service"
 ]
 
 
@@ -67,20 +67,20 @@ async def validate_claims(file: UploadFile = File(...), db: Session = Depends(ge
             worst_status = "red"
 
         # CPT validation
-        cpt_result = validate_cpt(row_dict.get("CPT_Code", ""), cpt_valid, cpt_list)
+        cpt_result = validate_cpt(row_dict.get("SA_Procedure_Code", ""), cpt_valid, cpt_list)
         if cpt_result["status"] == "green" and cpt_result.get("auto_fixed"):
-            auto_fixed["CPT_Code"] = cpt_result["code"]
-            issues.append({"field": "CPT_Code", "message": f"Auto-fixed: {cpt_result['auto_fixed']}", "suggestions": []})
+            auto_fixed["SA_Procedure_Code"] = cpt_result["code"]
+            issues.append({"field": "SA_Procedure_Code", "message": f"Auto-fixed: {cpt_result['auto_fixed']}", "suggestions": []})
         elif cpt_result["status"] == "yellow":
             issues.append({
-                "field": "CPT_Code",
+                "field": "SA_Procedure_Code",
                 "message": cpt_result.get("issue", "Invalid CPT code"),
                 "suggestions": cpt_result.get("suggestions", []),
             })
             if worst_status == "green":
                 worst_status = "yellow"
         elif cpt_result["status"] == "red":
-            issues.append({"field": "CPT_Code", "message": cpt_result.get("issue", "Invalid CPT code"), "suggestions": []})
+            issues.append({"field": "SA_Procedure_Code", "message": cpt_result.get("issue", "Invalid CPT code"), "suggestions": []})
             worst_status = "red"
 
         # Modifier validation

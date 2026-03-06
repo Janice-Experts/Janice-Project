@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClaimGuard - Upload Claims</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>ClaimGuard – Upload</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <span class="nav-brand">ClaimGuard</span>
-        <div class="nav-links">
-            <a href="/" class="active">Upload</a>
-            <a href="/dashboard.html">Dashboard</a>
-        </div>
+<div class="layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <a href="/" class="sidebar-btn active" title="Upload">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+        <a href="/dashboard.html" class="sidebar-btn" title="Dashboard">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18M9 21V9"/>
+            </svg>
+        </a>
+        <a href="/results.html" class="sidebar-btn" title="Results">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+        </a>
+        <a href="#" class="sidebar-btn" title="More">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+        </a>
     </nav>
 
-    <main class="container">
-        <div class="upload-card">
-            <h1>Validate Your Claims</h1>
-            <p class="subtitle">Upload a CSV to detect ICD/CPT coding errors, missing modifiers, and duplicate claims.</p>
-
-            <form id="upload-form">
-                <label id="drop-zone" for="file-input">
-                    <div class="drop-icon">&#128194;</div>
-                    <div class="drop-text">Drop CSV here or click to browse</div>
-                    <input type="file" id="file-input" accept=".csv" style="display:none">
-                </label>
-                <button type="submit" class="btn btn-primary btn-large">Validate Claims</button>
-            </form>
-
-            <div id="status" class="status" style="display:none"></div>
-
-            <div class="csv-hint">
-                <strong>Required columns:</strong> ClaimID, Age, Gender, ICD_Code, CPT_Code, Modifier, Date_of_Service<br>
-                <strong>Optional:</strong> PatientID (needed for duplicate detection)
+    <!-- Main -->
+    <div class="main">
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-main">ClaimGuard</span><span class="brand-sub"> | EisWagter</span>
             </div>
-        </div>
-    </main>
+            <select class="lang-select">
+                <option value="en">EN</option>
+                <option value="af">AF</option>
+            </select>
+        </header>
 
-    <script src="/js/upload.js"></script>
+        <section class="hero">
+            <h2 class="hero-title">Upload Claims File / Laai Eise Lêer Op</h2>
+            <form id="upload-form">
+                <div class="upload-row">
+                    <span id="file-name" class="file-name-display">Choose File / Kies Lêer</span>
+                    <input type="file" id="file-input" accept=".csv" style="display:none">
+<button type="submit" class="upload-btn">Upload / Laai Op</button>
+                </div>
+            </form>
+            <div id="status" class="status" style="display:none"></div>
+        </section>
+
+        <div class="page-body"></div>
+    </div>
+
+</div>
+<script src="/js/upload.js"></script>
 </body>
 </html>
