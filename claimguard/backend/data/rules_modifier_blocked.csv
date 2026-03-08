@@ -1,0 +1,7 @@
+modifier,procedure_code,reason
+0005,0001,Modifier 0005 (multiple procedures) not valid with diagnostic consultation codes
+0005,0002,Modifier 0005 (multiple procedures) not valid with diagnostic consultation codes
+0005,0010,Modifier 0005 (multiple procedures) not valid with diagnostic consultation codes
+0005,0011,Modifier 0005 (multiple procedures) not valid with diagnostic consultation codes
+0010,0001,Modifier 0010 (local anaesthetic by operator) not valid with consultation/diagnostic codes
+0010,0002,Modifier 0010 (local anaesthetic by operator) not valid with consultation/diagnostic codes

@@ -1,0 +1,6 @@
+procedure_code,icd_prefix,description
+0190,M,Musculoskeletal procedure requires musculoskeletal/connective tissue diagnosis (M-chapter)
+0191,M,Musculoskeletal procedure requires musculoskeletal/connective tissue diagnosis (M-chapter)
+72501,J,Chest X-ray most appropriate for respiratory diagnoses (J-chapter)
+72501,R,Chest X-ray appropriate for symptom-based respiratory diagnoses (R-chapter)
+72501,Z,Chest X-ray appropriate for screening/follow-up (Z-chapter)

@@ -41,3 +41,21 @@ class RefCPT(Base):
     id = Column(Integer, primary_key=True, index=True)
     code = Column(String, unique=True, index=True)
     description = Column(String)
+
+
+class RuleModifierBlocked(Base):
+    __tablename__ = "rule_modifier_blocked"
+
+    id = Column(Integer, primary_key=True, index=True)
+    modifier = Column(String, index=True)
+    procedure_code = Column(String, index=True)
+    reason = Column(String)
+
+
+class RuleProcedureIcd(Base):
+    __tablename__ = "rule_procedure_icd"
+
+    id = Column(Integer, primary_key=True, index=True)
+    procedure_code = Column(String, index=True)
+    icd_prefix = Column(String)
+    description = Column(String)

@@ -3,11 +3,13 @@ import pandas as pd
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 from ..database.db import get_db
-from ..database.models import ClaimSession, ClaimRow, RefICD, RefCPT
+from ..database.models import ClaimSession, ClaimRow, RefICD, RefCPT, RuleModifierBlocked, RuleProcedureIcd
 from ..validators.icd_validator import validate_icd
 from ..validators.cpt_validator import validate_cpt
 from ..validators.modifier_validator import validate_modifier
 from ..validators.duplicate_checker import check_duplicate
+from ..validators.modifier_procedure_validator import validate_modifier_procedure
+from ..validators.procedure_icd_validator import validate_procedure_icd
 
 router = APIRouter()
 
@@ -33,6 +35,15 @@ async def validate_claims(file: UploadFile = File(...), db: Session = Depends(ge
     icd_list = list(icd_valid)
     cpt_valid = {r.code for r in db.query(RefCPT).all()}
     cpt_list = list(cpt_valid)
+
+    # Load cross-field rules into memory
+    blocked_modifier_rules = {
+        (r.modifier, r.procedure_code)
+        for r in db.query(RuleModifierBlocked).all()
+    }
+    procedure_icd_rules = {}
+    for r in db.query(RuleProcedureIcd).all():
+        procedure_icd_rules.setdefault(r.procedure_code, []).append(r.icd_prefix)
 
     session = ClaimSession(filename=file.filename or "upload.csv", total_rows=len(df))
     db.add(session)
@@ -92,6 +103,28 @@ async def validate_claims(file: UploadFile = File(...), db: Session = Depends(ge
         elif mod_result["status"] == "red":
             issues.append({"field": "Modifier", "message": mod_result.get("issue", "Invalid modifier"), "suggestions": []})
             worst_status = "red"
+
+        # Modifier-procedure rule check
+        mp_result = validate_modifier_procedure(
+            row_dict.get("Modifier", ""),
+            row_dict.get("SA_Procedure_Code", ""),
+            blocked_modifier_rules,
+        )
+        if mp_result["status"] == "yellow":
+            issues.append({"field": "Modifier", "message": mp_result["issue"], "suggestions": []})
+            if worst_status == "green":
+                worst_status = "yellow"
+
+        # Procedure-ICD rule check
+        pi_result = validate_procedure_icd(
+            row_dict.get("SA_Procedure_Code", ""),
+            row_dict.get("ICD_Code", ""),
+            procedure_icd_rules,
+        )
+        if pi_result["status"] == "yellow":
+            issues.append({"field": "SA_Procedure_Code", "message": pi_result["issue"], "suggestions": []})
+            if worst_status == "green":
+                worst_status = "yellow"
 
         # Duplicate check
         if check_duplicate(row_dict, seen_duplicates):
