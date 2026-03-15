@@ -31,7 +31,15 @@
       "Bash(export:*)",
       "Bash(python:*)",
       "Bash(curl:*)",
-      "Bash(netstat -ano)"
+      "Bash(netstat -ano)",
+      "Bash(timeout 15 bash:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(timeout 30 bash:*)",
+      "Bash(sqlite3:*)",
+      "Bash(netstat:*)",
+      "Bash(tasklist:*)",
+      "Bash(powershell:*)"
     ]
   },
   "hooks": {
