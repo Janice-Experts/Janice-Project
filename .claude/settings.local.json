@@ -39,7 +39,35 @@
       "Bash(sqlite3:*)",
       "Bash(netstat:*)",
       "Bash(tasklist:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Read(//c/Projects/**)",
+      "Bash(npx create-next-app@latest icdguard --typescript --tailwind --app --eslint --no-src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(cd:*)",
+      "Bash(cp:*)",
+      "Bash(npm install:*)",
+      "Bash(npm search:*)",
+      "Bash(npm audit:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)",
+      "Bash(TOOL_DIR=\"/c/Users/james/.claude/projects/C--Projects-Janice-Project/903f1d9c-fac6-4805-a951-22666730ccba/tool-results\"\nls \"$TOOL_DIR\"/*.xlsx 2>/dev/null | head -20)",
+      "Bash(PYTHON=\"/c/Projects/Janice Project/.venv/Scripts/python\"\n\"$PYTHON\" -c \"import openpyxl; print\\('ok'\\)\" 2>&1 || \"$PYTHON\" -m pip install openpyxl 2>&1 | tail -3)",
+      "Bash(find:*)",
+      "Bash(\"/c/Projects/Janice Project/.venv/Scripts/python\" /c/Projects/ICDGuard/scripts/fetch-gems-tariffs.py 2>&1)",
+      "Bash(npm test:*)",
+      "Bash(ls:*)",
+      "Bash(grep -E \"\\\\.\\(tsx|ts|jsx|js\\)$\")",
+      "Bash(xargs grep:*)",
+      "Bash(wc -l public/data/*.json)",
+      "Bash(node -e \":*)",
+      "Bash(done)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx\\)$\")",
+      "Bash(npx next:*)",
+      "Bash(find 'C:\\\\Projects\\\\Janice Project\\\\ICDGuard' -type f \\\\\\(-name *chapter* -o -name *block* -o -name *category* -o -name *hierarchy* \\\\\\))",
+      "Bash(grep -r ICD '/c/Projects/Janice Project/ICDGuard/docs' --include=*.md)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(timeout 8)",
+      "Bash(grep:*)"
     ]
   },
   "hooks": {
@@ -54,5 +82,9 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   }
 }
